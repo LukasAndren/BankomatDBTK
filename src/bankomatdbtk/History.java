@@ -11,12 +11,14 @@ import java.sql.Date;
 public class History {
     protected int id;
     protected Date date;
-    protected double sum;
+    protected int sum;
+    protected Account account;
 
-    public History(int id, Date date, double sum) {
+    public History(int id, Date date, int sum, Account account) {
         this.id = id;
         this.date = date;
         this.sum = sum;
+        this.account = account;
     }
 
     public int getId() {
@@ -39,7 +41,7 @@ public class History {
         return sum;
     }
 
-    public void setSum(double sum) {
+    public void setSum(int sum) {
         this.sum = sum;
     }
 }

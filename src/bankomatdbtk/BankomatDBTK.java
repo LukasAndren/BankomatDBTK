@@ -109,7 +109,9 @@ public class BankomatDBTK extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Repository r = new Repository();
+        r.callChangeAccountInterest(1, 10);
         launch(args);
     }
 
