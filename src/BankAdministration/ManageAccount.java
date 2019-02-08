@@ -35,7 +35,15 @@ public class ManageAccount {
         bRemoveFounds = new Button("Remove Founds");
         bChangeInterest = new Button("Change Interest");
         bDeleteAccount = new Button("Delete Account");
+        Button grantLoanButton = new Button("Grant new Loan");
+        Button manageLoansButton = new Button("Manage Loans");
 
+        manageLoansButton.setStyle("-fx-min-width: 300px;"
+                + "-fx-min-height: 50px;");
+        manageLoansButton.setAlignment(Pos.BASELINE_LEFT);
+        grantLoanButton.setStyle("-fx-min-width: 300px;"
+                + "-fx-min-height: 50px;");
+        grantLoanButton.setAlignment(Pos.BASELINE_LEFT);
         bShowHistory.setStyle("-fx-min-width: 300px;"
                 + "-fx-min-height: 50px;");
         bShowHistory.setAlignment(Pos.BASELINE_LEFT);
@@ -57,6 +65,8 @@ public class ManageAccount {
         vbox.getChildren().add(bRemoveFounds);
         vbox.getChildren().add(bChangeInterest);
         vbox.getChildren().add(bDeleteAccount);
+        vbox.getChildren().add(manageLoansButton);
+        vbox.getChildren().add(grantLoanButton);
         vbox.getChildren().add(back);
 
         bShowHistory.setOnAction((event) -> {
@@ -77,22 +87,14 @@ public class ManageAccount {
         back.setOnAction((event) -> {
             ChooseAccount ca = new ChooseAccount(stage, customer);
         });
-        Button grantLoanButton = new Button("Grant new Loan");
-        grantLoanButton.setStyle("-fx-min-width: 300px;"
-                + "-fx-min-height: 50px;");
+
         grantLoanButton.setOnAction((event) -> {
             grantLoan = new GrantLoan(stage, customer, account);
         });
 
-        Button manageLoansButton = new Button("Manage Loans");
-        manageLoansButton.setStyle("-fx-min-width: 300px;"
-                + "-fx-min-height: 50px;");
         manageLoansButton.setOnAction((event) -> {
             ChooseLoan chooseLoan = new ChooseLoan(stage, customer, account);
         });
-        vbox.getChildren().add(manageLoansButton);
-
-        vbox.getChildren().add(grantLoanButton);
 
         root.setTop(label);
         root.setCenter(vbox);
