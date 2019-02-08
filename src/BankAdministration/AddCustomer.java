@@ -2,6 +2,7 @@ package BankAdministration;
 
 
 import bankomatdbtk.Customer;
+import bankomatdbtk.Repository;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,7 +13,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class AddCustomer {
-
+    private Repository r = new Repository();
+    
     public AddCustomer(Stage stage) {
         BorderPane root = new BorderPane();
         Label nameLabel = new Label("Enter Customer Name");
@@ -34,10 +36,10 @@ public class AddCustomer {
         vbox.getChildren().add(back);
 
         ok.setOnAction((event) -> {
-            String n = nameField.getText();
-            int p = 0;
+            String name = nameField.getText();
+            int pincode = 0;
             try {
-                p = Integer.parseInt(pincodeField.getText());
+                pincode = Integer.parseInt(pincodeField.getText());
             } catch (Exception e) {
                 System.out.println("Not a valid pincode");
                 AddCustomer addCustomer = new AddCustomer(stage);
@@ -45,7 +47,7 @@ public class AddCustomer {
 
             int ID = 666;
 
-            Customer customer = new Customer(ID, n, p);
+            r.callAddCustomer(name, pincode);
             BankAdministration ba = new BankAdministration();
         });
         

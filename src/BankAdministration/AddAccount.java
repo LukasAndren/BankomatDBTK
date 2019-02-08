@@ -3,6 +3,7 @@ package BankAdministration;
 
 import bankomatdbtk.Account;
 import bankomatdbtk.Customer;
+import bankomatdbtk.Repository;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 
 public class AddAccount {
     private ManageCustomer manageCustomer;
+    Repository r = new Repository();
     
     public AddAccount (Stage stage, Customer customer) {
         VBox vbox = new VBox();
@@ -31,7 +33,7 @@ public class AddAccount {
             float interest = Float.parseFloat(interestField.getText());
             
             Account tempAccount = new Account(id, balance, interest, customer);
-            addNewAccount(tempAccount);
+            r.callAddAccount(customer.getId(), balance, interest);
             manageCustomer = new ManageCustomer(stage, customer);
         });
         
@@ -50,10 +52,6 @@ public class AddAccount {
         root.setCenter(vbox);
         Scene scene = new Scene(root, 300, 300);
         stage.setScene(scene);
-    }
-    
-    private void addNewAccount(Account account) {
-        System.out.println("Account added");
     }
 
     
