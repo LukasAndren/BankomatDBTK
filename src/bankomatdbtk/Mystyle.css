@@ -5,3 +5,14 @@
     -fx-max-height: 100px;
     -fx-font-size: 30px;
 }
+
+.label {
+  -fx-alignment: center;  
+  -fx-font-size: 40px;
+  
+}
+
+VBox {
+    -fx-alignment: center;
+    -fx-padding: 10 ;
+}

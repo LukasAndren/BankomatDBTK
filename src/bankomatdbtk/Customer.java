@@ -13,7 +13,6 @@ public class Customer {
     protected int id;
     protected String name;
     protected int pinCode;
-    protected List<Account> accounts;
 
     public Customer(){
         
@@ -23,7 +22,6 @@ public class Customer {
         this.id = id;
         this.name = name;
         this.pinCode = pinCode;
-        accounts = new ArrayList<>();
     }
 
     public int getId() {
@@ -48,10 +46,6 @@ public class Customer {
 
     public void setPinCode(int pinCode) {
         this.pinCode = pinCode;
-    }
-    
-    public void addAccount(Account account){
-        accounts.add(account);
     }
     
     

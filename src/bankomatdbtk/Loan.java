@@ -6,6 +6,7 @@
 package bankomatdbtk;
 
 
+
 public class Loan {
     protected int id;
     protected int balance;
@@ -14,6 +15,14 @@ public class Loan {
     protected int paymantPlan;
     protected Account account;
 
+    public Loan(){
+        
+    }
+    
+    public Loan(int id, int balance, float interest){
+        
+    }
+    
     public Loan(int id, int balance, int amount, float interest, int paymantPlan, Account account) {
         this.id = id;
         this.balance = balance;
@@ -62,4 +71,13 @@ public class Loan {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+    
 }

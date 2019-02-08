@@ -11,8 +11,6 @@ public class Account {
     protected int balance;
     protected float interest;
     protected Customer customer;
-    protected List<History> histories;
-    protected List<Loan> loans;
 
     public Account(){
         
@@ -23,8 +21,6 @@ public class Account {
         this.balance = balance;
         this.interest = interest;
         this.customer = customer;
-        histories = new ArrayList<>();
-        loans = new ArrayList<>();
     }
 
     public int getId() {
@@ -51,11 +47,12 @@ public class Account {
         this.interest = interest;
     }
 
-    public void addHistory(History history){
-        histories.add(history);
+    public Customer getCustomer() {
+        return customer;
     }
-    
-    public void addLoan(Loan loan){
-        loans.add(loan);
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
+
 }

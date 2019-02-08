@@ -44,4 +44,13 @@ public class History {
     public void setSum(int sum) {
         this.sum = sum;
     }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+    
 }

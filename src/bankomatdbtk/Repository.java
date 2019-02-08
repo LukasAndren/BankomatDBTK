@@ -98,6 +98,7 @@ public class Repository {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     public void callAddCustomer(String name, int pin) {
@@ -202,7 +203,7 @@ public class Repository {
             cStmt.setInt(1, accountId);
             cStmt.setInt(2, amount);
             cStmt.setFloat(3, interest);
-            cStmt.setInt(2, paymentPlan);
+            cStmt.setInt(4, paymentPlan);
             cStmt.execute();
         } catch (SQLException ex) {
             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
@@ -232,4 +233,21 @@ public class Repository {
             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public List<History> getHistory() {
+        return history;
+    }
+
 }
